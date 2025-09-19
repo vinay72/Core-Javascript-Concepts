@@ -1,4 +1,7 @@
 // currying function by using bind 
+Function currying is a functional programming technique where a function that takes multiple arguments is transformed into a series of functions that each
+take a single argument. Instead of calling a function with all arguments at once, you call it with one argument at a time, and each call returns a new function
+that accepts the next argument.
 
 let multiply = function(x, y){
     console.log(x * y);
