@@ -29,12 +29,12 @@ console.log("Last console.log");
 // there is an array of objects
 // const users = [
 // {
-// name: "vinay"
+// name: "vinay",
 // id: 1,
 // degrees: ["mtech", "b-tech"]
 // },
 // {
-// name: "vinay68686"
+// name: "vinay68686",
 // id: 2,
 // degrees: ["mtech", "b-tech"]
 // }
@@ -53,6 +53,18 @@ console.log("Last console.log");
 // degrees: ["mtech", "b-tech", "phd"]
 // }
 // ]
+
+Solution below - 
+
+  const updatedUsers = users.map((user, index) => {
+  return {
+    ...user,
+    id: 1, // force id = 1 for all
+    degrees: [...user.degrees, "phd"] // add phd
+  };
+});
+
+console.log(updatedUsers);
 
 
 
