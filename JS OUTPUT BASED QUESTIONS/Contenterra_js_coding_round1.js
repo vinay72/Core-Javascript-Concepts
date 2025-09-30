@@ -56,6 +56,7 @@ const ranked = students
   .map(student => {
     // Calculate total marks for each mid
     const totals = student.mids.map(m => m.telugu + m.hindi + m.english);
+    // console.log( totals)
 
     //     For each mid exam (m), we calculate the total marks by adding telugu + hindi + english.
     // 👉 This gives us an array of numbers — one number per mid exam.
@@ -76,6 +77,7 @@ const ranked = students
 
 
     const bestTwo = totals.sort((a, b) => b - a).slice(0, 2);
+    // console.log(bestTwomids)
 
     // totals.sort((a, b) => b - a) sorts the totals in descending order (highest first).
     //  .slice(0, 2) takes only the top 2 values (the two best mids).
@@ -87,7 +89,7 @@ const ranked = students
     
 
     const bestSum = bestTwo.reduce((a, b) => a + b, 0);
-
+    console.log(bestSum)
     // Sum of best two mids
     //     Add those two best totals together.
     // 👉 .reduce((a, b) => a + b, 0) means "start from 0, keep adding each number".
@@ -100,7 +102,7 @@ const ranked = students
     //     👉 For each student, return a new object like:
 
     // { name: "A", score: 220 }
-  })
+})
   // Sort students by their bestTwoSum descending
   .sort((a, b) => b.score - a.score)
   // Return just the names in rank order
