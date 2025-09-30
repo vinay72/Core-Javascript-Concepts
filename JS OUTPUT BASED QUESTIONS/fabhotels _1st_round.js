@@ -23,6 +23,13 @@ setTimeout(() => {
 
 console.log("Last console.log");
 
+output
+
+Promise constructor
+Last console.log
+resolved
+Timeout2
+
 
 
 
