@@ -30,6 +30,24 @@ Last console.log
 resolved
 Timeout2
 
+Execution order
+
+Synchronous code runs first
+
+"Promise constructor" is logged immediately when the Promise is created.
+
+"Last console.log" is logged next (still synchronous).
+
+Microtasks (Promise callbacks) run after all synchronous code
+
+The .then(...) callback is added to the microtask queue.
+
+So "resolved" will be printed after the synchronous code finishes.
+
+Macrotasks (setTimeout) run after microtasks
+
+"Timeout2" is logged last.
+
 
 
 
