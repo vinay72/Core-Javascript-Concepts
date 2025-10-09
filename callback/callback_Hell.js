@@ -1,12 +1,21 @@
-// There are 2 Parts of Callback:
+// The two issues which we face while using callbacks are - 
+// 1. CALLBACK HELL
+// 2. INVERSION OF CONTROL
+// with using callbacks, we can do all asynchronous tasks in javascript
 
-// Good Part of callback - Callback are super important while writing asynchronous code in JS
-// Bad Part of Callback - Using callback we can face issue:
-// Callback Hell
-// Inversion of control
-// Understanding of Bad part of callback is super important to learn Promise in next lecture.
+// Callback Hell, also known as the "Pyramid of Doom," is a common anti-pattern in JavaScript,
+// particularly when dealing with multiple asynchronous operations that are dependent on each other.
+// It arises when numerous callback functions are nested deeply within one another, 
+// leading to code that becomes increasingly difficult to read, understand, and maintain.
 
-// 💡 JavaScript is synchronous, single threaded language. It can Just do one thing at a time, it has just one call-stack and it can execute one thing at a time. Whatever code we give to Javascript will be quickly executed by Javascript engine, it does not wait.
+// INVERSION OF CONTROL - YOU LOOSE THE CONTROL OF YOUR CODE, WHEN WE ARE USING CALLBACKS.
+// whenever we have callback function and we pass it to some other function, we are giving control of our function
+// our piece of written code to some other code and we dont know what is happening behind the scenes now.
+// this is a very important problem that we face when we are using callbacks.
+
+
+
+
 
 console.log("Namaste");
 console.log("JavaScript");
@@ -15,8 +24,7 @@ console.log("Season 2");
 // JavaScript
 // Season 2
 
-// 💡 It is quickly printing because `Time, tide & Javascript waits for none.`
-// But what if we have to delay execution of any line, we could utilize callback, How?
+
 
 console.log("Namaste");
 setTimeout(function () {
@@ -61,24 +69,9 @@ api.createOrder(cart, function () {
     });
   });
 });
-// 💡 Callback Hell
-// When we have a large codebase and multiple apis and have dependency on each other, then we fall into callback hell. These codes are tough to maintain. These callback hell structure is also known as Pyramid of Doom.
 
-// Till this point we are comfortable with concept of callback hell but now lets discuss about Inversion of Control. It is very important to understand in order to get comfortable around the concept of promise.
-
-// 💡 Inversion of control is like that you lose the control of code when we are using callback.
-
-// Let's understand with the help of example code and comments:
 
 api.createOrder(cart, function () {
   api.proceedToPayment();
 });
 
-// 💡 So over here, we are creating a order and then we are blindly trusting `createOrder` to call `proceedToPayment`.
-
-// 💡 It is risky, as `proceedToPayment` is important part of code and we are blindly trusting `createOrder` to call it and handle it.
-
-// 💡 When we pass a function as a callback, basically we are dependant on our parent function that it is his responsibility to run that function. This is called `inversion of control` because we are dependant on that function. What if parent function stopped working, what if it was developed by another programmer or callback runs two times or never run at all.
-
-// 💡 In next session, we will see how we can fix such problems.
-// 💡 Async programming in JavaScript exists because callback exits.
