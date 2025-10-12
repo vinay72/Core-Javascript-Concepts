@@ -1,0 +1,7 @@
+Tree shaking in React, like in any other modern JavaScript application, is an optimization technique used during the build process to eliminate "dead code" or unused code from the final JavaScript bundle. The term originates from the idea of "shaking a tree" to remove dead leaves, where the dead leaves represent the unused code.
+
+Here's how it works and why it's important for React applications:
+Eliminating Unused Code: When you develop a React application, you often import modules and libraries, but you might only use a small portion of their functionality. Tree shaking identifies and removes the parts of these modules or libraries that are never actually used in your application.
+Reliance on ES6 Modules: Tree shaking heavily relies on the static nature of ES6 module syntax (import and export). Unlike CommonJS (require), ES6 modules allow bundlers (like Webpack or Rollup, which are commonly used in React projects) to statically analyze the dependency graph and determine which exports are actually imported and used. 
+Reduced Bundle Size: By removing unused code, tree shaking significantly reduces the size of your final JavaScript bundle. A smaller bundle means faster download times, quicker parsing and execution by the browser, and ultimately, improved application performance and user experience.
+Improved Performance: Beyond faster loading, a smaller bundle also means less code for the browser to process and execute, leading to smoother performance, especially on devices with limited resources.
