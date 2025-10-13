@@ -1,5 +1,11 @@
 // Promises
 
+// Inversion of Control (IoC) in JavaScript is a design principle where the control of the flow of a program is inverted, meaning that a library, framework, or runtime takes responsibility for handling and managing certain aspects, rather than the developer's code explicitly managing them. This is often achieved through mechanisms like callbacks, Promises, and Dependency Injection.
+// Key aspects of IoC in JavaScript:
+// Callbacks and Asynchronous Operations:
+// In traditional synchronous programming, you explicitly call functions in a specific order. With asynchronous operations and callbacks (like setTimeout, event listeners), you provide a function (the callback) to be executed by another entity (the browser's event loop, a library) at a later time, effectively inverting control over when that specific code runs.
+
+
 // 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
 // 2. Inversion of control is overcome by using promise.
 //   2.1) A promise is an object that represents eventual completion/failure of an asynchronous operation.
