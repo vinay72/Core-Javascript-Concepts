@@ -5,6 +5,7 @@
 // You almost certainly have encountered debouncing in your daily lives before — when entering an elevator. 
 // Only after X duration of not pressing the "Door open" button (the debounced function not being called) will the elevator door actually close (the callback function is executed).
 
+// FLIPKART UI AND Vrize first round frontend developer interview question
 let counter = 0
 
 const getData = () => {
