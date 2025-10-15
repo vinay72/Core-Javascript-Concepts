@@ -21,21 +21,40 @@
 
 // EVENT CAPTURING
 
+// document.querySelector("#grandparent")
+// .addEventListener('click', () => {
+//   console.log("Grandparent clicked");
+  
+// }, true)
+// document.querySelector("#parent")
+// .addEventListener('click', () => {
+//   console.log("parent clicked");
+  
+// }, true)
+// document.querySelector("#child")
+// .addEventListener('click', () => {
+//   console.log("child clicked");
+  
+// }, true)
+
+// mix and match
+
+
 document.querySelector("#grandparent")
 .addEventListener('click', () => {
   console.log("Grandparent clicked");
   
-}, true)
+}, true) // event capturing
 document.querySelector("#parent")
 .addEventListener('click', () => {
   console.log("parent clicked");
   
-}, true)
+}, false) // event bubbling
 document.querySelector("#child")
 .addEventListener('click', () => {
   console.log("child clicked");
   
-}, true)
+}, true) // // event capturing
 
 
 
