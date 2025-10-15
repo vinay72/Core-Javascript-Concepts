@@ -40,21 +40,44 @@
 // mix and match
 
 
+// document.querySelector("#grandparent")
+// .addEventListener('click', () => {
+//   console.log("Grandparent clicked");
+  
+// }, true) // event capturing
+// document.querySelector("#parent")
+// .addEventListener('click', () => {
+//   console.log("parent clicked");
+  
+// }, false) // event bubbling
+// document.querySelector("#child")
+// .addEventListener('click', () => {
+//   console.log("child clicked");
+  
+// }, true) // // event capturing
+
+
 document.querySelector("#grandparent")
 .addEventListener('click', () => {
   console.log("Grandparent clicked");
   
-}, true) // event capturing
+}, false) 
 document.querySelector("#parent")
-.addEventListener('click', () => {
+.addEventListener('click', (e) => {
+    
   console.log("parent clicked");
+  e.stopPropagation() // this will help us to stop the propagation of the event
+    // propagation will stop at this point of time and code also stops, it does not print Grandparent clicked 
   
-}, false) // event bubbling
+}, false) 
 document.querySelector("#child")
 .addEventListener('click', () => {
   console.log("child clicked");
   
-}, true) // // event capturing
+}, false) 
+
+// how we can stop propagating events up the hierarchy or down and how is it useful
+
 
 
 
