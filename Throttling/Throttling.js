@@ -7,20 +7,13 @@
 const expensive = () => {
     console.log("Expensive");
 }
-window.addEventListener("resize", betterExpensive)
-// 
-// on each and every resize event, this method expensive will be called,
-// when the window is resized, 100 and thousand times this method gets called, is this a good way, obviously not
 
-
-const betterExpensive = throttle(expensive, limit);
-// this function is throttled expensive function
-// So we have to implement this throttle function on our own
 
 // Our own implementation of throttle method
 // throttle function has two arguments - 1. function here expensive function 2. limit - duration after which the function will be throttled
 const throttle = (func, limit) => {
     let flag = true; // this is an instance of flag and this is what Closure is
+    // we made closure so that we don't reinitialize our falg again and again
     // we will only call the below fn, when the flag is true, i am just trying to restrict my func() call.
     return function(){
         let context = this
@@ -37,3 +30,13 @@ const throttle = (func, limit) => {
         
     }
 }
+
+const limit = 1000;
+const betterExpensive = throttle(expensive, limit);
+// this function is throttled expensive function
+// So we have to implement this throttle function on our own
+
+window.addEventListener("resize", betterExpensive)
+// 
+// on each and every resize event, this method expensive will be called,
+// when the window is resized, 100 and thousand times this method gets called, is this a good way, obviously not
