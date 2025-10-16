@@ -1,0 +1,31 @@
+CRN - Content Rendering Path
+The content rendering path involves five main steps: HTML parsing to build the DOM, CSS parsing to build the CSSOM,
+combining them into a render tree, performing layout to determine size and position, and finally painting the pixels
+on the screen. This critical rendering path determines the order in which a browser processes and displays web page
+content. 
+
+1. HTML Parsing and DOM Construction
+
+The browser starts by parsing the HTML document. 
+It converts the HTML into a tree-like structure called the Document Object Model (DOM), which represents the page's structure. 
+
+2. CSS Parsing and CSSOM Construction
+
+During or after HTML parsing, the browser finds and processes CSS. 
+It builds the CSS Object Model (CSSOM), which contains the styling rules for the page. 
+Note: CSS is "render-blocking" because the browser needs it to style the page correctly. 
+
+3. Render Tree Construction
+
+The browser combines the DOM and the CSSOM to create the render tree. 
+This tree contains only the elements that will be visible on the screen, including their computed styles. Elements like <head> or those with display: none are excluded. 
+
+4. Layout
+
+The browser calculates the exact size and position of each element in the render tree. 
+This step determines the layout of every visible element, finding its place on the page. 
+
+5. Painting
+
+The browser paints the actual pixels on the screen based on the render tree and layout information. 
+This process involves drawing the different layers of the page, including text, colors, and images, to the screen. 
