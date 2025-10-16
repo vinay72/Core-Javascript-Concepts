@@ -1,0 +1,29 @@
+React Server Components (RSC)
+* Run components on the server, send serialized results to the client.
+* Reduces bundle size & improves performance.
+* Great for heavy logic/data fetching.
+
+2️⃣ Concurrent Rendering
+* React can prepare multiple UI updates in the background.
+* Keeps apps responsive even with heavy computations.
+
+3️⃣ Suspense for Data Fetching
+* Suspense is no longer just for lazy loading.
+* Handle async data (e.g. API calls) with clean UI fallbacks.
+
+4️⃣ Automatic Batching
+* Multiple state updates in the same event cycle get batched automatically.
+* Fewer renders → better performance out of the box.
+
+5️⃣ useSyncExternalStore Hook
+* Standard way to subscribe to external stores (Redux, Zustand, etc).
+* Ensures UI consistency across concurrent rendering.
+
+6️⃣ React Compiler (a.k.a React Forget)
+* Optimizes React code at compile-time.
+* Removes unnecessary re-renders without manual memoization.
+
+7️⃣ useOptimistic Hook
+* Manage optimistic UI updates.
+* Example: instantly show “comment added” before server confirms it.
+* Makes apps feel fast and user-friendly.
