@@ -1,11 +1,5 @@
 // Promises
 
-// Inversion of Control (IoC) in JavaScript is a design principle where the control of the flow of a program is inverted, meaning that a library, framework, or runtime takes responsibility for handling and managing certain aspects, rather than the developer's code explicitly managing them. This is often achieved through mechanisms like callbacks, Promises, and Dependency Injection.
-// Key aspects of IoC in JavaScript:
-// Callbacks and Asynchronous Operations:
-// In traditional synchronous programming, you explicitly call functions in a specific order. With asynchronous operations and callbacks (like setTimeout, event listeners), you provide a function (the callback) to be executed by another entity (the browser's event loop, a library) at a later time, effectively inverting control over when that specific code runs.
-
-
 // 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom) | 2.) Inversion of control
 // 2. Inversion of control is overcome by using promise.
 //   2.1) A promise is an object that represents eventual completion/failure of an asynchronous operation.
@@ -117,6 +111,15 @@ user.then(function (data) {
   console.log(data);
 });
 // And this is how Promise is used.
+
+// Interview Guide
+// 💡What is Promise?
+// -> Promise object is a placeholder for certain period of time until we receive value from asynchronous operation.
+
+// -> A container for a future value.
+
+// -> A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+
 // It guarantees that it could be resolved only once, either it could be `success` or `failure`
 /**
     A Promise is in one of these states:
@@ -128,13 +131,7 @@ user.then(function (data) {
 // 💡Promise Object are immutable.
 // -> Once promise is fulfilled and we have data we can pass here and there and we don't have to worry that someone can mutate that data. So over above we can't directly mutate user promise object, we will have to use .then
 
-// Interview Guide
-// 💡What is Promise?
-// -> Promise object is a placeholder for certain period of time until we receive value from asynchronous operation.
 
-// -> A container for a future value.
-
-// -> A Promise is an object representing the eventual completion or failure of an asynchronous operation.
 
 // We are now done solving one issue of callback i.e. Inversion of Control
 
@@ -186,7 +183,12 @@ createOrder(cart)
 
 
 
-// resolve(val): This seems to refer to a function call where resolve is a function defined within a Promise executor function. When you're creating a Promise, the executor function typically receives two parameters: resolve and reject. These are callback functions provided by the JavaScript runtime to signal the success or failure of the asynchronous operation represented by the Promise. When you call resolve(val), you're essentially fulfilling the Promise with the provided value val. It's commonly used inside a Promise executor function to indicate that the asynchronous operation has succeeded, and the Promise should be resolved with the given value.
+// resolve(val): This seems to refer to a function call where resolve is a function defined within a
+//  Promise executor function. When you're creating a Promise, the executor function typically receives two parameters: 
+// resolve and reject. These are callback functions provided by the JavaScript runtime to signal the success or 
+// failure of the asynchronous operation represented by the Promise. When you call resolve(val), you're essentially
+//  fulfilling the Promise with the provided value val. It's commonly used inside a Promise executor function to 
+// indicate that the asynchronous operation has succeeded, and the Promise should be resolved with the given value.
 
 // e.g
 const myPromise = new Promise((resolve, reject) => {
@@ -198,7 +200,10 @@ const myPromise = new Promise((resolve, reject) => {
   }
 });
 
-// Promise.resolve(val): This is a static method provided by the Promise object itself. It returns a Promise object that is resolved with the given value val. It's useful when you want to create a Promise that is already resolved with a particular value. This can be handy when you're dealing with asynchronous operations and need to handle values that might be synchronous or asynchronous uniformly.
+// Promise.resolve(val): This is a static method provided by the Promise object itself. It returns a Promise object
+//  that is resolved with the given value val. It's useful when you want to create a Promise that is already resolved
+//  with a particular value. This can be handy when you're dealing with asynchronous operations and need to handle
+//  values that might be synchronous or asynchronous uniformly.
 
 // Example:
 const myPromise1 = Promise.resolve(42); // Creates a Promise resolved with the value 42
