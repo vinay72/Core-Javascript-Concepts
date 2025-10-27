@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
+<div>
+    <ul id="category">
+        <li id="laptops">
+            laptops
+        </li>
+        <li id="cameras">
+            laptops
+        </li>
+        <li id="laptops">
+            laptops
+        </li>
+    </ul>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
+
+
+
+// Event delegation is based upon event bubbling
+
+
+// instead of attaching event handlers to each and every child elements or the html elements 
+// individually, we should rather attach a event handler to directly parent of these elements,
+// we will try to attach a single event listener to the parent id.
+// Now when anyone clicks on child event handlers, event will eventually bubbles out to their parent,
+// and event handler would be triggered and callback function would be called  
+// Now all of the child events are propagated up the hierarchy and the parent event handler is 
+// listening to all the child event handlers.
+
+// This is what Event Delegation is.
+
+document.querySelector('#category').addEventListener('click', (e) => {
+    if(e.target.tagName == 'LI'){
+        console.log(e.target.id)
+        window.location.href = '/' + e.target.id
+    }
+    
+
+})
